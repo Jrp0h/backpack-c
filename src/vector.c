@@ -43,6 +43,8 @@ void vector_resize(vector_T* vector, int new_size)
   for(int i = 0; i < vector->current_index && i < new_size; i++)
     new_block[i] = vector->data[i];
 
+  free(vector->data);
+
   vector->capacity = new_size;
   vector->data = new_block;
 }
