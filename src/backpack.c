@@ -76,7 +76,7 @@ bool backpack_add_item(backpack_T* backpack, item_T* item) {
   return true;
 }
 
-void backpack_remove_item(backpack_T* backpack, item_T* item, int amount) { 
+bool backpack_remove_item(backpack_T* backpack, item_T* item, int amount) { 
 
   // Go over all items to see if it exists
   for(int i = 0; i < vector_size(backpack->items); i++)
@@ -106,9 +106,11 @@ void backpack_remove_item(backpack_T* backpack, item_T* item, int amount) {
         backpack->current_weight -= existing_item->weight;
       }
 
-      return;
+      return true;
     }
   }
+
+  return false;
 }
 
 float backpack_get_current_weight(backpack_T* backpack) {

@@ -21,7 +21,7 @@ backpack_T* backpack_new(float max_weight, float max_volume);
 void backpack_destroy(backpack_T* backpack);
 
 bool backpack_add_item(backpack_T* backpack, item_T* item);
-void backpack_remove_item(backpack_T* backpack, item_T* item, int amount);
+bool backpack_remove_item(backpack_T* backpack, item_T* item, int amount);
 
 float backpack_get_current_weight(backpack_T* backpack);
 float backpack_get_current_volume(backpack_T* backpack);
